@@ -9,13 +9,14 @@
 
     <ui:define name="content">
         <ice:form>
-            <ice:outputText value="Usuário: ${facesContext.externalContext.userPrincipal.name}"
-                            rendered="${!empty facesContext.externalContext.userPrincipal}"/>
+             <ice:outputText value="Usuário: ${facesContext.externalContext.userPrincipal.name}"
+                             rendered="${!empty facesContext.externalContext.userPrincipal}"/>
             <div>
-                <ice:outputText value="PÁGINA DO ALUNO"/>
+                <ice:outputText value="PÁGINA PRINCIPAL"/>
             </div>
-            <a href="${facesContext.externalContext.requestContextPath}/index.xhtml">Voltar ao menu principal</a><br/>
-            <ice:commandButton value="Logout" action="#{loginBean.logoutAction}"/>
+            <a href="${facesContext.externalContext.requestContextPath}/admin/admin.xhtml">Acesso do Administrador</a><br/>
+            <a href="${facesContext.externalContext.requestContextPath}/prof/professor.xhtml">Acesso do Professor</a><br/>
+            <a href="${facesContext.externalContext.requestContextPath}/aluno/aluno.xhtml">Acesso do Aluno</a>
         </ice:form>
     </ui:define>
 </ui:composition>

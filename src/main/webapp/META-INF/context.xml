@@ -12,14 +12,15 @@
               type="javax.sql.DataSource" 
               url="jdbc:postgresql://localhost/if6ae" 
               username="if6ae"/>
-    <Realm className="org.apache.catalina.realm.LockOutRealm">
-        <Realm className="org.apache.catalina.realm.DataSourceRealm"
-               dataSourceName="jdbc/autenticacao"
+  <Realm className="org.apache.catalina.realm.LockOutRealm">
+        <Realm className="org.apache.catalina.realm.JDBCRealm"
+               driverName="org.postgresql.Driver"
+               connectionURL="jdbc:postgresql://localhost/if6ae?user=if6ae&amp;password=if6ae"
                userTable="usuario"
                userNameCol="login"
                userCredCol="senha"
                userRoleTable="perfil"
                roleNameCol="perfil"
         />
-    </Realm> 
+  </Realm>
 </Context>

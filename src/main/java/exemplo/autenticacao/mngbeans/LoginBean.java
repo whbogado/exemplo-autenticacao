@@ -1,4 +1,4 @@
-package exmplo.autenticacao.mngbeans;
+package exemplo.autenticacao.mngbeans;
 
 import static com.sun.activation.registries.LogSupport.log;
 import javax.faces.bean.ManagedBean;
@@ -43,14 +43,15 @@ public class LoginBean extends RequestBean {
         this.result = result;
     }
 
-    public void logoutAction() {
+    public String logoutAction() {
+        String action = null;
         HttpServletRequest request = getRequest();
-        HttpSession session = getSession(false);
         try {
             request.logout();
-            if (session != null) session.invalidate();
+            action = "/index.xhtml?faces-redirect=true";
         } catch (ServletException e) {
             log("logoutAction", e);
         }
+        return action;
     }
 }
