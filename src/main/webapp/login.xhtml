@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:ice="http://www.icesoft.com/icefaces/component"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                template="./WEB-INF/templates/layout.xhtml">
+
+    <ui:define name="metadata">
+        <f:metadata>
+            <f:viewParam name="result" value="#{loginBean.result}"/>
+        </f:metadata>
+    </ui:define>
+    
+    <ui:define name="content">
+        <form method="POST" action="j_security_check">
+            <div style="margin: 1em 0">
+                <div style="margin: 0.5em 0">
+                    <label for="usuarioInput" class="iceOutLbl" style="display: inline-block; width: 45px">Usuário</label>
+                    <input id="usuarioInput" class="iceInpTxt" type="text" name="j_username"/>
+                </div>
+                <div style="margin: 0.5em 0">
+                    <label for="senhaInput" class="iceOutLbl" style="display: inline-block; width: 45px">Senha</label>
+                    <input id="senhaInput" class="iceInpSecrt" type="password" name="j_password"/>
+                </div>
+            </div>
+            <input type="submit" class="iceCmdBtn" value="Entrar" style="width: 120px"/>
+        </form>
+        <div style="margin: 1em 0; color: red">#{empty loginBean.result ? "" : "Acesso negado"}</div>
+    </ui:define>
+    
+</ui:composition>

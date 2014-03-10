@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context antiJARLocking="true" path="/exemplo-autenticacao">
+    <Resource auth="Container" 
+              driverClassName="org.postgresql.Driver" 
+              logAbandoned="true" 
+              maxActive="5" 
+              maxIdle="2" 
+              maxWait="5000" 
+              name="jdbc/autenticacao" 
+              password="if6ae" 
+              removeAbandoned="true" 
+              type="javax.sql.DataSource" 
+              url="jdbc:postgresql://localhost/if6ae" 
+              username="if6ae"/>
+    <Realm className="org.apache.catalina.realm.LockOutRealm">
+        <Realm className="org.apache.catalina.realm.DataSourceRealm"
+               dataSourceName="jdbc/autenticacao"
+               userTable="usuario"
+               userNameCol="login"
+               userCredCol="senha"
+               userRoleTable="perfil"
+               roleNameCol="perfil"
+        />
+    </Realm> 
+</Context>

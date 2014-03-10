@@ -1,0 +1,78 @@
+/*
+    Estilos adicionais ou modificações dos estilos aplicados pelo Icefaces.
+*/
+
+.calemRowsInstAluno {
+    font-size: 8pt;
+    margin-bottom: 0.75em;
+    text-align: left;
+    vertical-align: text-top;
+}
+
+.opcoesAtivasGroup .iceCmdLnk:after {
+    content: " [x] ";
+}
+
+/* Estes estilos são aplicados automaticamente pelo ICEfaces */
+.buscaOpcoesAvancadasGridRow1, .buscaOpcoesAvancadasGridRow2 {
+    height: 2em;
+    vertical-align: middle;
+}
+
+/* ----------- messages ---------- */
+.iceMsgs {
+
+}
+
+.calemIceMsgInfo, .calemIceMsgWarn, .calemIceMsgError, .calemIceMsgFatal {
+    margin-left: 0.5em;
+}
+
+.calemIceMsgError:before {
+    content: url('/calem/imagens/atencao_10x10.png');
+    margin-right: 4px;
+}
+
+.calemIceMsgs, .calemIceMsg {
+    font-style: italic;
+}
+
+.calemIceMsgs ul {
+    list-style-position: inside;
+    list-style-image: url('/calem/imagens/atencao_10x10.png');
+    padding-left: 10px;
+}
+
+.calemIceMsgsFatal, .calemIceMsgFatal {
+    color: red;
+}
+
+.calemIceMsgsError, .calemIceMsgError {
+    color: red;
+}
+
+.calemIceMsgsWarn, .calemIceMsgWarn {
+    color: orange;
+}
+
+.calemIceMsgsInfo, .calemIceMsgInfo {
+    color: blue;
+}
+
+/* labels */
+/* vamos deixar um pequeno espaço após o label */
+.iceOutLbl {
+    margin-right: 5px;
+}
+
+/* cria um link semelhant a um botão */
+.linkBotao {
+    border: 2px #CCCCCC outset;
+    padding: 4px;
+    background-color: #CCCCCC;
+    outline: none;
+}
+
+a.linkBotao:link:hover, a.linkBotao:visited:hover {
+    text-decoration: none;
+}
